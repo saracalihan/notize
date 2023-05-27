@@ -20,6 +20,7 @@ Json notify schema:
 
 **Table of Contents:**
 
+- [Folder Structure](#folder-structure)
 - [Usage](#usage)
   - [Installation](#installation)
   - [Set Environment Variables](#set-environment-variables)
@@ -27,6 +28,31 @@ Json notify schema:
   - [Run Project](#run-project)
 - [Contribution](#contribution)
 - [License](#license)
+
+## Folder Structure
+
+```bash
+.
+├── docker-compose.yml
+├── LICENSE
+├── nodemon.json
+├── package.json
+├── package-lock.json
+├── README.md
+├── sample.env
+├── build
+├── src
+│   ├── ConfigService.ts
+│   ├── Constants
+│   │   ├── Notifier.ts
+│   │   └── Queue.ts
+│   ├── index.ts # Start point, read configration and consume notifiers
+│   ├── Interfaces.ts
+│   ├── Notifiers # Notify adaptors, they are implements INotifier.
+│   │   └── MailNotfier.ts
+│   └── QueueAdapter.ts # RabbitMQ client
+└── tsconfig.json
+```
 
 ## Usage
 
@@ -50,7 +76,7 @@ npm i
 Copy `sample.env` to `.env` file then set environment variables like RabbitMQ settings.
 
 ```bash
-copy sample.env .env
+cp sample.env .env
 ```
 
 ### Start Queues
