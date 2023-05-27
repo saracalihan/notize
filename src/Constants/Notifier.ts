@@ -1,0 +1,9 @@
+export const NOTIFIER_TYPES = {
+  MAIL: 'MAIL',
+  LOG: 'LOG',
+}
+
+export const MAIL_NOTIFIER_TEMPLATE_TYPES = {
+  PLAIN_TEXT: 'PLAIN_TEXT',
+  WELCOME: 'WELCOME',
+}

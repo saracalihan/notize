@@ -1,0 +1,30 @@
+{
+  "name": "notize",
+  "version": "1.0.0",
+  "description": "Node.js notification service with RabbitMQ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/index.js",
+    "start:dev": "nodemon",
+    "build": "tsc"
+  },
+  "keywords": [
+    "node",
+    "RabbitMQ",
+    "rmq",
+    "email"
+  ],
+  "author": "Alihan SARAÇ <saracalihan@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/amqplib": "^0.10.1",
+    "@types/node": "^20.1.3",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.0.3"
+  }
+}
