@@ -15,13 +15,12 @@ import MailNotifier from './Notifiers/MailNotfier';
   // })
   // let index = 0;
   // setInterval(async () => {
-  //   let message = JSON.stringify(
-  //     {
+  //   let message = {
   //       template: MAIL_NOTIFIER_TEMPLATE_TYPES.WELCOME,
   //       data: {
   //         username: index
   //       }
-  //     });
+  //     };
   //   await queue.send(message);
   //   console.log(message);
   //   index++;

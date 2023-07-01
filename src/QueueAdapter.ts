@@ -47,10 +47,14 @@ class QueueAdapter {
     });
   }
 
-  async send(data: WithImplicitCoercion<string | Uint8Array | readonly number[]>, channel?: any) {
+  async send(data: WithImplicitCoercion<string | Uint8Array | readonly number[]> | object, channel?: any) {
     const isChannelPass = channel;
     if (!isChannelPass) {
       channel = await this.createChannel();
+    }
+
+    if(typeof data === "object"){
+      data = JSON.stringify(data);
     }
 
     channel.sendToQueue(this.config.name, Buffer.from(data));
