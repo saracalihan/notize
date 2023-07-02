@@ -21,7 +21,14 @@ export class ConfigService {
   static getMailNotifierConfig() {
     return {
       url: this.get('MAIL_QUEUE_URL'),
-      queueName: this.get('MAIL_QUEUE_NAME'),
+      name: this.get('MAIL_QUEUE_NAME'),
+    }
+  }
+
+  static getErrorQueueConfig() {
+    return {
+      url: this.get('ERROR_QUEUE_URL'),
+      name: this.get('ERROR_QUEUE_NAME'),
     }
   }
 

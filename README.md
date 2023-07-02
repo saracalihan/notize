@@ -4,17 +4,17 @@ notize is basic TypeScript notify template for multiple notifiers like email, sm
 
 Json notify schema:
 
-```js
+```json
 {
-    template: "PLAIN_TEXT | <another template name>", // if it is "PLAIN_TEXT" we don't use any template, we send data directly.
-    from: {}, // Sender info
-    to: {},  // Reciver info
-    data: {
+    "template": "PLAIN_TEXT | <another template name>", // if it is "PLAIN_TEXT" we don't use any template, we send data directly.
+    "from": {}, // Sender info
+    "to": {},  // Reciver info
+    "data": {
         // Words to change and their values in the template
         // key: value,
         // or just string for "PLAIN_TEXT" type
     },
-    date: ""// the date the message was sent to the queue, it is optional.
+    "date": ""// the date the message was sent to the queue, it is optional.
 }
 ```
 
