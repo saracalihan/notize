@@ -35,15 +35,19 @@ class QueueAdapter {
   }
 
   async consume(listener: (msg: any, channel: any) => any, autoAck = true) {
-
-
     let ch = await this.createChannel(true);
 
     ch.consume(this.config.name, async (msg: any) => {
-      await listener(msg, ch);
-      if (autoAck) {
-        ch.ack(msg);
-      }
+      try {
+        await listener(msg, ch);
+      } catch (err) {
+        throw err;
+      } finally {
+
+        if (autoAck) {
+          ch.ack(msg);
+        }
+      } 
     });
   }
 
@@ -53,7 +57,7 @@ class QueueAdapter {
       channel = await this.createChannel();
     }
 
-    if(typeof data === "object"){
+    if (typeof data === "object") {
       data = JSON.stringify(data);
     }
 

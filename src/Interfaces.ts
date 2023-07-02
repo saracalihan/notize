@@ -7,28 +7,12 @@ export interface IRabbitMQConfig {
 
 export interface INotifier {
   type: string;
-  templates: Record<string, string>;
   queue: QueueAdapter | null;
   /**
    * Consume to queue
    */
   consumeQueue(): void;
-  /**
-   * Load all templates in to memmory
-   */
-  readTemplates(): Array<string>;
-  /**
-   * Get template from memmory
-   * @param type Template type/name
-   */
-  getTemplate(type: string): string;
-  /**
-   * Replace values to template.
-   * @param type Template type/name
-   * @param data Values object
-   */
-  loadTemplate(type: string, data: object): string;
-  sendNotfication(): any;
+  sendNotfication(data: IQueueValue): any;
 }
 
 export interface IQueueValue {
